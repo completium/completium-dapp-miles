@@ -10,6 +10,7 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
+import Footer from './components/Footer';
 
 function App() {
   const [connected, setConnected]   = React.useState(false);
@@ -34,7 +35,7 @@ function App() {
           backgroundRepeat  : 'no-repeat',
           backgroundPosition: 'right 50% top 5%',}}>
         <Dashboard connected={connected} setConnected={setConnected}/>
-        <Grid container direction="row" spacing={2}> {
+        <Grid container direction="row" spacing={2} style={{ marginBottom: 100 }}> {
             AppStorage.products.map(product =>
               <Grid item xs={4}>
                 <Product image={product.image} title={product.title} nbmiles={product.nbmiles}></Product>
@@ -42,6 +43,7 @@ function App() {
             )}
         </Grid>
       </Container>
+      <Footer></Footer>
     </ThemeProvider>
 
     </div>
