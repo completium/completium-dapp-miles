@@ -8,7 +8,6 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 const HeaderBar = (props) => {
   const minWidth = useMediaQuery('(min-width:600px)');
   const visibility = minWidth?'visible':'hidden';
-  console.log(minWidth);
   return (
     <AppBar position="static" color="inherit">
       <Toolbar>

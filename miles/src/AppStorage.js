@@ -3,7 +3,6 @@
 // it is passed to all components and is declared as react top component state
 
 var AppStorage = {
-  walletConnected : false,
   contractAddress : "KT1 this is an address",
   accountAddress  : "tz1 this is an address",
   nbActiveMiles   : 10,

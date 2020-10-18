@@ -1,16 +1,16 @@
 import React from 'react';
 import './App.css';
-import logo from './logo.svg';
+import ticket from './img/takeoff-ticket.svg';
 import AppStorage from './AppStorage.js';
 import HeaderBar from './components/HeaderBar.js';
+import Dashboard from './components/Dashboard.js';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
 
 function App() {
-  const [appStorage, setAppStorage] = React.useState(AppStorage);
+  const [connected, setConnected]   = React.useState(false);
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
 
   const theme = React.useMemo(
@@ -26,12 +26,12 @@ function App() {
     <div className="App">
     <ThemeProvider theme={theme}>
       <CssBaseline/>
-      <HeaderBar appStorage={appStorage}/>
+      <HeaderBar appStorage={AppStorage}/>
       <Container maxWidth="md" style={{
-          backgroundImage : "url(" + logo + ")",
+          backgroundImage : "url(" + ticket + ")",
           backgroundRepeat  : 'no-repeat',
-          backgroundPosition: 'center',}}>
-        <Typography component="div" style={{ height: '100vh' }} />
+          backgroundPosition: 'right 50% top 5%',}}>
+        <Dashboard connected={connected} setConnected={setConnected}/>
       </Container>
     </ThemeProvider>
 
