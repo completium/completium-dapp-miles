@@ -3,7 +3,6 @@ import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
 const Dashboard = (props) => {
@@ -15,14 +14,24 @@ const Dashboard = (props) => {
         <Paper style={{ opacity: 0.8, paddingLeft: 18, paddingRight: 18 }}>
             <Grid container direction="row" alignItems="center" spacing={2}>
               <Grid item xs={2}>
-                <Typography color="textSecondary">
-                  Active Miles : 5
-                </Typography>
+                <Grid container direction="row" spacing={2} justify="center">
+                  <Grid item>
+                    <Typography color="textSecondary">Active Miles:</Typography>
+                  </Grid>
+                  <Grid item>
+                    <Typography>5</Typography>
+                  </Grid>
+                </Grid>
               </Grid>
               <Grid item xs={8}>
-                <Typography color="textSecondary" >
-                  Time before next mile expiration : 23h 45m 30s
-                </Typography>
+                <Grid container direction="row" spacing={2} justify="center">
+                  <Grid item>
+                    <Typography color="textSecondary">Time before next mile expiration:</Typography>
+                  </Grid>
+                  <Grid item>
+                    <Typography color="error">23h 45m 30s</Typography>
+                  </Grid>
+                </Grid>
               </Grid>
               <Grid item xs={2}>
                 <Button>View Miles</Button>
@@ -40,7 +49,7 @@ const Dashboard = (props) => {
             onClick={() => {
               props.setConnected(true);
             }}>
-            Connect Wallet
+            connect to wallet
           </Button>
         </Grid>
       </Grid>

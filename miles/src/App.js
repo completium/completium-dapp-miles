@@ -4,6 +4,7 @@ import ticket from './img/takeoff-ticket.svg';
 import AppStorage from './AppStorage.js';
 import HeaderBar from './components/HeaderBar.js';
 import Dashboard from './components/Dashboard.js';
+import Product from './components/Product.js';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -32,6 +33,7 @@ function App() {
           backgroundRepeat  : 'no-repeat',
           backgroundPosition: 'right 50% top 5%',}}>
         <Dashboard connected={connected} setConnected={setConnected}/>
+        <Product image="phoneshield.jpg" title="Tezos Phone Case" nbmiles="4"></Product>
       </Container>
     </ThemeProvider>
 

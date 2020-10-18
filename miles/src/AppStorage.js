@@ -17,7 +17,7 @@ var AppStorage = {
     { id : "p02", img : "tezos_shield.png",  title : "Tezos Phone Shield", nbStars : 5, got : false },
   ],
   githubUrl       : "https://github.com/edukera/completium-dapps",
-  appTitle        : "Use Your Miles Before it's Too Late!"
+  appTitle        : "Use Your Miles Before Expiration"
 }
 
 export default AppStorage
