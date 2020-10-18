@@ -13,11 +13,14 @@ var AppStorage = {
     { id : "m0000003", expiration : "2020-12-02", quantity : 2 },
   ],
   products        : [
-    { id : "p01", img : "archetype-cap.png", title : "Archetype Cap",      nbStars : 5, got : false },
-    { id : "p02", img : "tezos_shield.png",  title : "Tezos Phone Shield", nbStars : 5, got : false },
+    { image : "tezos-case.jpg",  title : "Tezos Phone Case", nbmiles : 5, got : false },
+    { image : "archetype-mug.jpg",  title : "Archetype Mug", nbmiles : 3, got : false },
+    { image : "tezos-sweats.jpg", title : "Tezos Sweat",      nbmiles : 8, got : false },
+    { image : "archetype-cap.png",  title : "Archetype Cap", nbmiles : 2, got : false },
+    { image : "tezos-cap.png",  title : "Tezos Cap", nbmiles : 2, got : false },
   ],
   githubUrl       : "https://github.com/edukera/completium-dapps",
-  appTitle        : "Use Your Miles Before Expiration"
+  appTitle        : "Use Your Miles Before Expiration!"
 }
 
 export default AppStorage

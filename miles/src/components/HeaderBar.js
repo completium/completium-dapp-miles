@@ -9,12 +9,12 @@ const HeaderBar = (props) => {
   const minWidth = useMediaQuery('(min-width:600px)');
   const visibility = minWidth?'visible':'hidden';
   return (
-    <AppBar position="static" color="inherit">
+    <AppBar position="static" color="default" style={{ boxShadow: "none", opacity: 1, /* backgroundColor: '#303030' */ }}>
       <Toolbar>
         <Typography variant="h6" style={{ position : 'absolute', fontFamily : 'Alegreya Sans SC, sans-serif' }}>
           Completium
         </Typography>
-        <Typography variant="h6" style={{ flexGrow : 1, visibility : visibility }}>
+        <Typography variant="h6" color="secondary" style={{ flexGrow : 1 }}>
           {props.appStorage.appTitle}
         </Typography>
       </Toolbar>

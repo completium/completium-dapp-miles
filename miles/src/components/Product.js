@@ -29,11 +29,11 @@ export default function Product(props) {
           title="Contemplative Reptile"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {props.title}
+          <Typography gutterBottom variant="body2" component="h2">
+            Nb. miles: {props.nbmiles}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Nb Miles: {props.nbmiles}
+            {props.title}
           </Typography>
         </CardContent>
       </CardActionArea>

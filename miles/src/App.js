@@ -9,6 +9,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
 
 function App() {
   const [connected, setConnected]   = React.useState(false);
@@ -33,7 +34,13 @@ function App() {
           backgroundRepeat  : 'no-repeat',
           backgroundPosition: 'right 50% top 5%',}}>
         <Dashboard connected={connected} setConnected={setConnected}/>
-        <Product image="phoneshield.jpg" title="Tezos Phone Case" nbmiles="4"></Product>
+        <Grid container direction="row" spacing={2}> {
+            AppStorage.products.map(product =>
+              <Grid item xs={4}>
+                <Product image={product.image} title={product.title} nbmiles={product.nbmiles}></Product>
+              </Grid>
+            )}
+        </Grid>
       </Container>
     </ThemeProvider>
 
