@@ -21,12 +21,24 @@ function getProductStates (connected, nbActiveMiles) {
   return states;
 }
 
+function getNextExpirationDate () {
+  var next = new Date(8640000000000000);
+  AppStorage.milesDemo.forEach(mile => {
+    var expiration = new Date(mile.expiration);
+    if (expiration >= Date.now() && expiration <= next) {
+      next = expiration;
+    }
+  });
+  return next;
+}
+
 function App() {
   const [connected, setConnected]   = React.useState(false);
   const [nbMiles, setNbMiles]       = React.useState(AppStorage.nbActiveMiles);
   const [viewMiles, setViewMiles]   = React.useState(false);
   const [productStates, setProductStates] = React.useState(getProductStates(connected,AppStorage.nbActiveMiles));
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const nextExpiration = getNextExpirationDate();
 
   const theme = React.useMemo(
     () =>
@@ -63,6 +75,7 @@ function App() {
         <Dashboard
           connected={connected}
           nbMiles={nbMiles}
+          nextExpiration={nextExpiration}
           handleConnected={handleConnected}
           openViewMiles={openViewMiles}/>
         <Grid container direction="row" spacing={2} style={{ marginBottom: 100 }}> {

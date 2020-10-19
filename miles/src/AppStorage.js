@@ -6,7 +6,6 @@ var AppStorage = {
   contractAddress : "KT1 this is an address",
   accountAddress  : "tz1 this is an address",
   nbActiveMiles   : 5,
-  nextExpiration  : "2020-11-01",
   milesColumns    : [
     { field: 'id', headerName: 'ID', width: 100 },
     { field: 'quantity', headerName: 'Quantity', width: 200 },
@@ -14,13 +13,13 @@ var AppStorage = {
   ],
   milesDemo       : [
     { id : "M0000001", expiration : "2020-06-01", quantity : 3 },
-    { id : "M0000002", expiration : "2020-11-02", quantity : 4 },
+    { id : "M0000002", expiration : "2020-10-21", quantity : 4 },
     { id : "M0000003", expiration : "2020-12-02", quantity : 2 },
-    { id : "M0000003", expiration : "2020-12-02", quantity : 2 },
-    { id : "M0000003", expiration : "2020-12-02", quantity : 2 },
-    { id : "M0000003", expiration : "2020-12-02", quantity : 2 },
-    { id : "M0000003", expiration : "2020-12-02", quantity : 2 },
-    { id : "M0000003", expiration : "2020-12-02", quantity : 2 },
+    { id : "M0000003", expiration : "2020-12-03", quantity : 2 },
+    { id : "M0000003", expiration : "2020-12-04", quantity : 2 },
+    { id : "M0000003", expiration : "2020-12-05", quantity : 2 },
+    { id : "M0000003", expiration : "2020-12-06", quantity : 2 },
+    { id : "M0000003", expiration : "2020-12-07", quantity : 2 },
   ],
   products        : [
     { pid: "P001", image : "tezos-case.jpg",  title : "Tezos Phone Case", nbmiles : 5, got : false },

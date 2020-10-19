@@ -31,7 +31,7 @@ const Dashboard = (props) => {
                     <Typography color="textSecondary">Time before next mile expiration:</Typography>
                   </Grid>
                   <Grid item>
-                    <CountDown expiration="2020-10-20" />
+                    <CountDown expiration={props.nextExpiration} />
                   </Grid>
                 </Grid>
               </Grid>
