@@ -15,8 +15,8 @@ import ViewMiles from './components/ViewMiles';
 
 function getProductStates (connected, nbActiveMiles) {
   var states = [];
-  AppStorage.products.map(product => {
-    states[product.pid] = (connected && nbActiveMiles >= product.nbmiles);
+  AppStorage.products.forEach (product => {
+    states[product.pid] = (connected && nbActiveMiles >= product.nbmiles)
   });
   return states;
 }

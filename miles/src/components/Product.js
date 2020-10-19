@@ -50,7 +50,7 @@ export default function Product(props) {
         <CardMedia
           className={classes.media}
           image={process.env.PUBLIC_URL + '/img/' + props.image}
-          title="Contemplative Reptile"
+          title={props.title}
         />
         <CardContent>
           <Typography gutterBottom variant="body2" component="h2">
