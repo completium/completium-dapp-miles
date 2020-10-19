@@ -5,11 +5,13 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import CountDown from './CountDown.js';
-import { useReady } from '../dapp';
+import { useReady, useWallet } from '../dapp';
+import { Link } from '@material-ui/core';
 
 const Dashboard = (props) => {
 
   const ready = useReady();
+  const wallet = useWallet();
 
   if (ready) {
     return (
@@ -45,17 +47,32 @@ const Dashboard = (props) => {
       </Container>
     )
   } else {
-    return (
-      <Grid container direction="column" style={{ height: '300px'}}>
-        <Grid item xs={12}>
-          <Button variant="contained" size="medium" color="secondary" style={{ marginTop: '125px' }}
-            disableElevation
-            onClick={props.handleConnect}>
-            connect to wallet
-          </Button>
+    if (wallet) {
+      return (
+        <Grid container direction="column" style={{ height: '300px'}}>
+          <Grid item xs={12}>
+            <Button variant="contained" size="medium" color="secondary" style={{ marginTop: '125px' }}
+              disableElevation
+              onClick={props.handleConnect}>
+              connect to wallet
+            </Button>
+          </Grid>
         </Grid>
-      </Grid>
-    )
+      )
+    } else {
+      return (
+        <Grid container direction="column" style={{ height: '300px'}}>
+          <Grid item xs={12}>
+            <Link href="https://thanoswallet.com/" rel="noopener" underline="none">
+              <Button variant="contained" size="medium" style={{ marginTop: '125px', backgroundColor: '#ed8936', color: 'white', fontWeight: 'bold'  }}
+                disableElevation>
+                Install Thanos
+              </Button>
+            </Link>
+          </Grid>
+        </Grid>
+      )
+    }
   }
 }
 
