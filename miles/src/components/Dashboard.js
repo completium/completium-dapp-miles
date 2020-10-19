@@ -21,7 +21,7 @@ const Dashboard = (props) => {
                     <Typography color="textSecondary">Active Miles:</Typography>
                   </Grid>
                   <Grid item>
-                    <Typography>5</Typography>
+                    <Typography>{props.nbMiles}</Typography>
                   </Grid>
                 </Grid>
               </Grid>
@@ -49,7 +49,7 @@ const Dashboard = (props) => {
           <Button variant="contained" size="medium" color="secondary" style={{ marginTop: '125px' }}
             disableElevation
             onClick={() => {
-              props.setConnected(true);
+              props.handleConnected();
             }}>
             connect to wallet
           </Button>

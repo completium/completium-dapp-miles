@@ -17,6 +17,30 @@ const useStyles = makeStyles({
   },
 });
 
+function ProductButton(props) {
+  if (props.connected) {
+    if (props.state) {
+      return (
+        <Button variant="contained" size="medium" color="secondary" disableElevation style={{ flexGrow: 1 }}>
+          Get it!
+        </Button>
+      )
+    } else {
+      return (
+        <Button variant="contained" size="medium" disableElevation style={{ flexGrow: 1 }} disabled>
+          Not Enough Miles
+        </Button>
+      )
+    }
+  } else {
+    return (
+      <Button variant="contained" size="medium" color="secondary" disableElevation style={{ flexGrow: 1 }} disabled>
+          Get it!
+        </Button>
+    )
+  }
+}
+
 export default function Product(props) {
   const classes = useStyles();
 
@@ -38,9 +62,7 @@ export default function Product(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button variant="contained" size="medium" color="secondary" disableElevation style={{ flexGrow: 1 }}>
-          Get it!
-        </Button>
+        <ProductButton state={props.state} connected={props.connected}/>
       </CardActions>
     </Card>
   );

@@ -13,9 +13,19 @@ import Grid from '@material-ui/core/Grid';
 import Footer from './components/Footer';
 import ViewMiles from './components/ViewMiles';
 
+function getProductStates (connected, nbActiveMiles) {
+  var states = [];
+  AppStorage.products.map(product => {
+    states[product.pid] = (connected && nbActiveMiles >= product.nbmiles);
+  });
+  return states;
+}
+
 function App() {
   const [connected, setConnected]   = React.useState(false);
+  const [nbMiles, setNbMiles]       = React.useState(AppStorage.nbActiveMiles);
   const [viewMiles, setViewMiles]   = React.useState(false);
+  const [productStates, setProductStates] = React.useState(getProductStates(connected,AppStorage.nbActiveMiles));
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
 
   const theme = React.useMemo(
@@ -27,6 +37,11 @@ function App() {
       }),
     [prefersDarkMode],
   );
+
+  const handleConnected = () => {
+    setProductStates(getProductStates(true,AppStorage.nbActiveMiles));
+    setConnected (true);
+  }
 
   const openViewMiles = () => {
     setViewMiles(true);
@@ -45,11 +60,21 @@ function App() {
           backgroundImage : "url(" + ticket + ")",
           backgroundRepeat  : 'no-repeat',
           backgroundPosition: 'right 50% top 5%',}}>
-        <Dashboard connected={connected} setConnected={setConnected} openViewMiles={openViewMiles}/>
+        <Dashboard
+          connected={connected}
+          nbMiles={nbMiles}
+          handleConnected={handleConnected}
+          openViewMiles={openViewMiles}/>
         <Grid container direction="row" spacing={2} style={{ marginBottom: 100 }}> {
             AppStorage.products.map(product =>
               <Grid item xs={4}>
-                <Product image={product.image} title={product.title} nbmiles={product.nbmiles}></Product>
+                <Product
+                  image={product.image}
+                  title={product.title}
+                  nbmiles={product.nbmiles}
+                  state={productStates[product.pid]}
+                  connected={connected}>
+                </Product>
               </Grid>
             )}
         </Grid>
