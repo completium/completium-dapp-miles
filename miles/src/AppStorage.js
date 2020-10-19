@@ -5,7 +5,7 @@
 var AppStorage = {
   contractAddress : "KT1 this is an address",
   accountAddress  : "tz1 this is an address",
-  nbActiveMiles   : 2,
+  nbActiveMiles   : 5,
   nextExpiration  : "2020-11-01",
   milesColumns    : [
     { field: 'id', headerName: 'ID', width: 100 },
