@@ -5,11 +5,13 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import CountDown from './CountDown.js';
+import { useReady } from '../dapp';
 
 const Dashboard = (props) => {
-  console.log(props.connected);
 
-  if (props.connected) {
+  const ready = useReady();
+
+  if (ready) {
     return (
       <Container style={{ height: '300px'}}>
         <Container style={{ height: '120px' }}></Container>
@@ -48,9 +50,7 @@ const Dashboard = (props) => {
         <Grid item xs={12}>
           <Button variant="contained" size="medium" color="secondary" style={{ marginTop: '125px' }}
             disableElevation
-            onClick={() => {
-              props.handleConnected();
-            }}>
+            onClick={props.handleConnect}>
             connect to wallet
           </Button>
         </Grid>

@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import ticket from './img/takeoff-ticket.svg';
-import { defaultNbActiveMiles, defaultMiles, products, appTitle } from './settings.js';
+import { defaultNbActiveMiles, defaultMiles, products, appTitle, appName, network } from './settings.js';
 import HeaderBar from './components/HeaderBar.js';
 import Dashboard from './components/Dashboard.js';
 import Product from './components/Product.js';
@@ -12,8 +12,10 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Footer from './components/Footer';
 import ViewMiles from './components/ViewMiles';
+import { DAppProvider, useReady, useConnect } from './dapp';
 
 function getProductStates (connected, nbActiveMiles) {
+  console.log(connected);
   var states = [];
   products.forEach (product => {
     states[product.pid] = (connected && nbActiveMiles >= product.nbmiles)
@@ -33,10 +35,30 @@ function getNextExpirationDate () {
 }
 
 function App() {
-  const [connected, setConnected]   = React.useState(false);
+  return (
+    <DAppProvider appName={appName}>
+      <React.Suspense fallback={null}>
+        <PageRouter />
+      </React.Suspense>
+    </DAppProvider>
+  );
+}
+
+function PageRouter() {
+  const ready = useReady();
+  const connect= useConnect();
+
+  const handleConnect = React.useCallback(async () => {
+    try {
+      await connect(network);
+    } catch (err) {
+      alert(err.message);
+    };
+  }, [connect]);
+
   const [nbMiles, setNbMiles]       = React.useState(defaultNbActiveMiles);
   const [viewMiles, setViewMiles]   = React.useState(false);
-  const [productStates, setProductStates] = React.useState(getProductStates(connected,nbMiles));
+  const productStates = getProductStates(ready,nbMiles);
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const nextExpiration = getNextExpirationDate();
 
@@ -49,11 +71,6 @@ function App() {
       }),
     [prefersDarkMode],
   );
-
-  const handleConnected = () => {
-    setProductStates(getProductStates(true,nbMiles));
-    setConnected (true);
-  }
 
   const openViewMiles = () => {
     setViewMiles(true);
@@ -73,10 +90,10 @@ function App() {
           backgroundRepeat  : 'no-repeat',
           backgroundPosition: 'right 50% top 5%',}}>
         <Dashboard
-          connected={connected}
+          connected={ready}
           nbMiles={nbMiles}
           nextExpiration={nextExpiration}
-          handleConnected={handleConnected}
+          handleConnect={handleConnect}
           openViewMiles={openViewMiles}/>
         <Grid container direction="row" spacing={2} style={{ marginBottom: 100 }}> {
             products.map(product =>
@@ -86,7 +103,7 @@ function App() {
                   title={product.title}
                   nbmiles={product.nbmiles}
                   state={productStates[product.pid]}
-                  connected={connected}>
+                  connected={ready}>
                 </Product>
               </Grid>
             )}

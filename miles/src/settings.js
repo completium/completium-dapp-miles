@@ -32,3 +32,7 @@ export const products = [
 export const githubUrl = "https://github.com/edukera/completium-dapps"
 
 export const appTitle = "Use Your Miles Before Expiration!"
+
+export const network = "carthagenet"
+
+export const appName = "MilesCorp."
