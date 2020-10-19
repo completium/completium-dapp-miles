@@ -2,9 +2,7 @@ import { Typography } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 
 const calculateTimeLeft = (expiration) => {
-    let year = new Date().getFullYear();
     let difference = new Date(expiration) - +new Date();
-    console.log(difference);
     let timeLeft = {};
     if (difference > 0) {
       timeLeft = {

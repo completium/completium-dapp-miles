@@ -38,11 +38,8 @@ export default function Product(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
+        <Button variant="contained" size="medium" color="secondary" disableElevation style={{ flexGrow: 1 }}>
+          Get it!
         </Button>
       </CardActions>
     </Card>

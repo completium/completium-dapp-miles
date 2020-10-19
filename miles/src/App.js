@@ -11,9 +11,11 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Footer from './components/Footer';
+import ViewMiles from './components/ViewMiles';
 
 function App() {
   const [connected, setConnected]   = React.useState(false);
+  const [viewMiles, setViewMiles]   = React.useState(false);
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
 
   const theme = React.useMemo(
@@ -25,6 +27,15 @@ function App() {
       }),
     [prefersDarkMode],
   );
+
+  const openViewMiles = () => {
+    setViewMiles(true);
+  };
+
+  const closeViewMiles = () => {
+    setViewMiles(false);
+  };
+
   return (
     <div className="App">
     <ThemeProvider theme={theme}>
@@ -34,7 +45,7 @@ function App() {
           backgroundImage : "url(" + ticket + ")",
           backgroundRepeat  : 'no-repeat',
           backgroundPosition: 'right 50% top 5%',}}>
-        <Dashboard connected={connected} setConnected={setConnected}/>
+        <Dashboard connected={connected} setConnected={setConnected} openViewMiles={openViewMiles}/>
         <Grid container direction="row" spacing={2} style={{ marginBottom: 100 }}> {
             AppStorage.products.map(product =>
               <Grid item xs={4}>
@@ -44,6 +55,7 @@ function App() {
         </Grid>
       </Container>
       <Footer></Footer>
+      <ViewMiles open={viewMiles} onclose={closeViewMiles} />
     </ThemeProvider>
 
     </div>

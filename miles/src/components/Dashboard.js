@@ -8,6 +8,7 @@ import CountDown from './CountDown.js';
 
 const Dashboard = (props) => {
   console.log(props.connected);
+
   if (props.connected) {
     return (
       <Container style={{ height: '300px'}}>
@@ -35,7 +36,7 @@ const Dashboard = (props) => {
                 </Grid>
               </Grid>
               <Grid item xs={2}>
-                <Button>View Miles</Button>
+                <Button onClick={props.openViewMiles}>View Miles</Button>
               </Grid>
             </Grid>
         </Paper>

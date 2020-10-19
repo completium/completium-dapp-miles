@@ -3,7 +3,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import '../index.css';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const Footer = (props) => {
     return (
