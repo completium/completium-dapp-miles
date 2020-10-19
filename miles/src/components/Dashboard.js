@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import CountDown from './CountDown.js';
 
 const Dashboard = (props) => {
   console.log(props.connected);
@@ -29,7 +30,7 @@ const Dashboard = (props) => {
                     <Typography color="textSecondary">Time before next mile expiration:</Typography>
                   </Grid>
                   <Grid item>
-                    <Typography color="error">23h 45m 30s</Typography>
+                    <CountDown expiration="2020-10-20" />
                   </Grid>
                 </Grid>
               </Grid>
