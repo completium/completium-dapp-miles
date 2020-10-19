@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import ticket from './img/takeoff-ticket.svg';
-import AppStorage from './AppStorage.js';
+import { defaultNbActiveMiles, defaultMiles, products, appTitle } from './settings.js';
 import HeaderBar from './components/HeaderBar.js';
 import Dashboard from './components/Dashboard.js';
 import Product from './components/Product.js';
@@ -15,7 +15,7 @@ import ViewMiles from './components/ViewMiles';
 
 function getProductStates (connected, nbActiveMiles) {
   var states = [];
-  AppStorage.products.forEach (product => {
+  products.forEach (product => {
     states[product.pid] = (connected && nbActiveMiles >= product.nbmiles)
   });
   return states;
@@ -23,7 +23,7 @@ function getProductStates (connected, nbActiveMiles) {
 
 function getNextExpirationDate () {
   var next = new Date(8640000000000000);
-  AppStorage.milesDemo.forEach(mile => {
+  defaultMiles.forEach(mile => {
     var expiration = new Date(mile.expiration);
     if (expiration >= Date.now() && expiration <= next) {
       next = expiration;
@@ -34,9 +34,9 @@ function getNextExpirationDate () {
 
 function App() {
   const [connected, setConnected]   = React.useState(false);
-  const [nbMiles, setNbMiles]       = React.useState(AppStorage.nbActiveMiles);
+  const [nbMiles, setNbMiles]       = React.useState(defaultNbActiveMiles);
   const [viewMiles, setViewMiles]   = React.useState(false);
-  const [productStates, setProductStates] = React.useState(getProductStates(connected,AppStorage.nbActiveMiles));
+  const [productStates, setProductStates] = React.useState(getProductStates(connected,nbMiles));
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const nextExpiration = getNextExpirationDate();
 
@@ -51,7 +51,7 @@ function App() {
   );
 
   const handleConnected = () => {
-    setProductStates(getProductStates(true,AppStorage.nbActiveMiles));
+    setProductStates(getProductStates(true,nbMiles));
     setConnected (true);
   }
 
@@ -67,7 +67,7 @@ function App() {
     <div className="App">
     <ThemeProvider theme={theme}>
       <CssBaseline/>
-      <HeaderBar appStorage={AppStorage}/>
+      <HeaderBar appTitle={appTitle}/>
       <Container maxWidth="md" style={{
           backgroundImage : "url(" + ticket + ")",
           backgroundRepeat  : 'no-repeat',
@@ -79,7 +79,7 @@ function App() {
           handleConnected={handleConnected}
           openViewMiles={openViewMiles}/>
         <Grid container direction="row" spacing={2} style={{ marginBottom: 100 }}> {
-            AppStorage.products.map(product =>
+            products.map(product =>
               <Grid item xs={4}>
                 <Product
                   image={product.image}
@@ -93,7 +93,7 @@ function App() {
         </Grid>
       </Container>
       <Footer></Footer>
-      <ViewMiles open={viewMiles} onclose={closeViewMiles} />
+      <ViewMiles open={viewMiles} onclose={closeViewMiles} theme={theme}/>
     </ThemeProvider>
 
     </div>

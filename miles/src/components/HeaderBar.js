@@ -15,7 +15,7 @@ const HeaderBar = (props) => {
           Completium
         </Typography>
         <Typography variant="h6" color="secondary" style={{ flexGrow : 1, visibility: visible }}>
-          {props.appStorage.appTitle}
+          {props.appTitle}
         </Typography>
       </Toolbar>
     </AppBar>

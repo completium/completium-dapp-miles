@@ -7,13 +7,13 @@ import MuiDialogContent from '@material-ui/core/DialogContent';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import { DataGrid } from '@material-ui/data-grid';
-import AppStorage from '../AppStorage';
+import { defaultMiles, milesColumns } from '../settings';
 
 const styles = (theme) => ({
   root: {
     margin: 0,
     padding: theme.spacing(2),
-    backgroundColor: '#212121'
+    backgroundColor: (theme.palette.type === 'light') ? theme.palette.background.default : '#212121'
   },
   closeButton: {
     position: 'absolute',
@@ -24,7 +24,7 @@ const styles = (theme) => ({
 });
 
 const DialogTitle = withStyles(styles)((props) => {
-  const { children, classes, onClose, ...other } = props;
+  const { children, classes, onClose } = props;
   return (
     <MuiDialogTitle disableTypography className={classes.root}>
       <Typography variant="h6">{children}</Typography>
@@ -48,8 +48,12 @@ const ViewMiles = (props) => {
       <DialogTitle id="customized-dialog-title" onClose={props.onclose}>
         Miles
       </DialogTitle>
-      <DialogContent dividers style={{ height: 410, width: 550, backgroundColor: '#212121' }}>
-        <DataGrid rows={AppStorage.milesDemo} columns={AppStorage.milesColumns} pageSize={4} />
+      <DialogContent dividers style={{
+        height: 410,
+        width: 550,
+        backgroundColor: (props.theme.palette.type === 'light') ? props.theme.palette.background.default : '#212121'
+      }}>
+        <DataGrid rows={defaultMiles} columns={milesColumns} pageSize={4} />
       </DialogContent>
     </Dialog>
   )
