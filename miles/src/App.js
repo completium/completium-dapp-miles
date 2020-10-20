@@ -35,7 +35,7 @@ function getNbActiveMiles(miles) {
 }
 
 function getNextExpirationDate (miles) {
-  if (miles == null) {
+  if (miles == null || miles.length === 0) {
     return null;
   }
   var next = new Date(8640000000000000);

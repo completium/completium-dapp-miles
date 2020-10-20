@@ -6,8 +6,8 @@ export const  defaultNbActiveMiles = 5
 
 export const  milesColumns    = [
     { field: 'id', headerName: 'ID', width: 100 },
-    { field: 'quantity', headerName: 'Quantity', width: 200 },
-    { field: 'expiration', headerName: 'Expiration', width: 200 },
+    { field: 'quantity', headerName: 'Quantity', width: 100 },
+    { field: 'expiration', headerName: 'Expiration', width: 300 },
   ]
 
 export const defaultMiles =  [
