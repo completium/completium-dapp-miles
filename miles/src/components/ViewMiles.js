@@ -7,7 +7,7 @@ import MuiDialogContent from '@material-ui/core/DialogContent';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import { DataGrid } from '@material-ui/data-grid';
-import { defaultMiles, milesColumns } from '../settings';
+import { milesColumns } from '../settings';
 
 const styles = (theme) => ({
   root: {
@@ -53,7 +53,7 @@ const ViewMiles = (props) => {
         width: 550,
         backgroundColor: (props.theme.palette.type === 'light') ? props.theme.palette.background.default : '#212121'
       }}>
-        <DataGrid rows={defaultMiles} columns={milesColumns} pageSize={4} />
+        <DataGrid rows={props.miles} columns={milesColumns} pageSize={4} />
       </DialogContent>
     </Dialog>
   )

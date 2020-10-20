@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import ticket from './img/takeoff-ticket.svg';
-import { defaultNbActiveMiles, defaultMiles, products, appTitle, appName, network } from './settings.js';
+import { products, appTitle, appName, network } from './settings.js';
 import HeaderBar from './components/HeaderBar';
 import ConnectWallet from './components/ConnectWallet';
 import Product from './components/Product';
@@ -23,9 +23,23 @@ function getProductStates (connected, nbActiveMiles) {
   return states;
 }
 
-function getNextExpirationDate () {
+function getNbActiveMiles(miles) {
+  if (miles === null) {
+    return null;
+  };
+  var total = 0;
+  miles.forEach(mile => {
+    total += mile.quantity;
+  });
+  return total;
+}
+
+function getNextExpirationDate (miles) {
+  if (miles == null) {
+    return null;
+  }
   var next = new Date(8640000000000000);
-  defaultMiles.forEach(mile => {
+  miles.forEach(mile => {
     var expiration = new Date(mile.expiration);
     if (expiration >= Date.now() && expiration <= next) {
       next = expiration;
@@ -56,11 +70,12 @@ function PageRouter() {
     };
   }, [connect]);
 
-  const [nbMiles, setNbMiles]       = React.useState(defaultNbActiveMiles);
+  const [nbMiles, setNbMiles]       = React.useState(null);
+  const [miles, setMiles]           = React.useState(null);
+  const [nextExpiration, setNextExpiration] = React.useState(null);
   const [viewMiles, setViewMiles]   = React.useState(false);
   const productStates = getProductStates(ready,nbMiles);
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-  const nextExpiration = getNextExpirationDate();
 
   const theme = React.useMemo(
     () =>
@@ -80,6 +95,12 @@ function PageRouter() {
     setViewMiles(false);
   };
 
+  const handleMiles = (m) => {
+    setMiles(m);
+    setNbMiles(getNbActiveMiles(m));
+    setNextExpiration(getNextExpirationDate(m));
+  }
+
   return (
     <div className="App">
     <ThemeProvider theme={theme}>
@@ -93,7 +114,9 @@ function PageRouter() {
           nbMiles={nbMiles}
           nextExpiration={nextExpiration}
           handleConnect={handleConnect}
-          openViewMiles={openViewMiles} />
+          openViewMiles={openViewMiles}
+          miles={miles}
+          handleMiles={handleMiles} />
         <Grid container direction="row" spacing={2} style={{ marginBottom: 100 }}> {
             products.map(product =>
               <Grid item xs={4}>
@@ -109,7 +132,7 @@ function PageRouter() {
         </Grid>
       </Container>
       <Footer></Footer>
-      <ViewMiles open={viewMiles} onclose={closeViewMiles} theme={theme}/>
+      <ViewMiles open={viewMiles} onclose={closeViewMiles} theme={theme} miles={miles}/>
     </ThemeProvider>
 
     </div>

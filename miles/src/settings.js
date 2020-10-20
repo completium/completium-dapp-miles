@@ -1,4 +1,4 @@
-export const  contractAddress = "KT1 this is an address"
+export const  contractAddress = "KT1Mu6RJzLpKroggUFSCsPPJuYQTHQESVeR1"
 
 export const  accountAddress  = "tz1 this is an address"
 

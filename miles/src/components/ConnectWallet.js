@@ -15,7 +15,9 @@ const ConnectWallet = (props) => {
       nbMiles={props.nbMiles}
       nextExpiration={props.nextExpiration}
       handleConnect={props.handleConnect}
-      openViewMiles={props.openViewMiles} />
+      openViewMiles={props.openViewMiles}
+      miles={props.miles}
+      handleMiles={props.handleMiles} />
   } else {
     return (
       <Grid container direction="column" style={{ height: '300px'}}>
