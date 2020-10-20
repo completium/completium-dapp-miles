@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import CountDown from './CountDown.js';
-import { useTezos, useOnBlock, useAccountPkh } from '../dapp';
+import { useTezos, useAccountPkh } from '../dapp';
 import { contractAddress } from '../settings';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
@@ -29,7 +29,7 @@ const Miles = (props) => {
           });
           console.log(dappMiles);
         }
-        props.handleMiles(dappMiles);
+        props.handleMiles(contract,dappMiles);
       })
     });
   }, [props.nbMiles]);

@@ -18,10 +18,20 @@ const useStyles = makeStyles({
 });
 
 function ProductButton(props) {
+
+  const handleClick = () => {
+    props.contract.methods.consume(props.nbmiles).send().then( op => {
+      console.log(`waiting for ${op.opHash} to be confirmed`);
+      op.receipt().then(() => {
+        props.handleReceipt();
+      });
+    })
+  }
+
   if (props.connected) {
     if (props.state) {
       return (
-        <Button variant="contained" size="medium" color="secondary" disableElevation style={{ flexGrow: 1 }}>
+        <Button variant="contained" size="medium" color="secondary" disableElevation style={{ flexGrow: 1 }} onClick={handleClick}>
           Get it!
         </Button>
       )
@@ -62,7 +72,12 @@ export default function Product(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <ProductButton state={props.state} connected={props.connected}/>
+        <ProductButton
+          state={props.state}
+          connected={props.connected}
+          contract={props.contract}
+          nbmiles={props.nbmiles}
+          handleReceipt={props.handleReceipt}/>
       </CardActions>
     </Card>
   );

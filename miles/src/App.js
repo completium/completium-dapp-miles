@@ -70,10 +70,11 @@ function PageRouter() {
     };
   }, [connect]);
 
-  const [nbMiles, setNbMiles]       = React.useState(null);
+  const [contract, setContract]     = React.useState(null);
   const [miles, setMiles]           = React.useState(null);
-  const [nextExpiration, setNextExpiration] = React.useState(null);
   const [viewMiles, setViewMiles]   = React.useState(false);
+  const nbMiles = getNbActiveMiles(miles);
+  const nextExpiration = getNextExpirationDate(miles);
   const productStates = getProductStates(ready,nbMiles);
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
 
@@ -95,10 +96,13 @@ function PageRouter() {
     setViewMiles(false);
   };
 
-  const handleMiles = (m) => {
+  const handleMiles = (c, m) => {
+    setContract(c);
     setMiles(m);
-    setNbMiles(getNbActiveMiles(m));
-    setNextExpiration(getNextExpirationDate(m));
+  }
+
+  const handleReceipt = () => {
+    setMiles(null);
   }
 
   return (
@@ -125,7 +129,9 @@ function PageRouter() {
                   title={product.title}
                   nbmiles={product.nbmiles}
                   state={productStates[product.pid]}
-                  connected={ready}>
+                  connected={ready}
+                  contract={contract}
+                  handleReceipt={handleReceipt}>
                 </Product>
               </Grid>
             )}
