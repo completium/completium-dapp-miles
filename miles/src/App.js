@@ -2,9 +2,9 @@ import React from 'react';
 import './App.css';
 import ticket from './img/takeoff-ticket.svg';
 import { defaultNbActiveMiles, defaultMiles, products, appTitle, appName, network } from './settings.js';
-import HeaderBar from './components/HeaderBar.js';
-import Dashboard from './components/Dashboard.js';
-import Product from './components/Product.js';
+import HeaderBar from './components/HeaderBar';
+import ConnectWallet from './components/ConnectWallet';
+import Product from './components/Product';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -89,12 +89,11 @@ function PageRouter() {
           backgroundImage : "url(" + ticket + ")",
           backgroundRepeat  : 'no-repeat',
           backgroundPosition: 'right 50% top 5%',}}>
-        <Dashboard
-          connected={ready}
+        <ConnectWallet
           nbMiles={nbMiles}
           nextExpiration={nextExpiration}
           handleConnect={handleConnect}
-          openViewMiles={openViewMiles}/>
+          openViewMiles={openViewMiles} />
         <Grid container direction="row" spacing={2} style={{ marginBottom: 100 }}> {
             products.map(product =>
               <Grid item xs={4}>
