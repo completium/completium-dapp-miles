@@ -3,3 +3,6 @@ image:
 tasks:
 - init: cd miles
   command: npm install
+ports:
+- port: 3000
+  onOpen: open-browser
