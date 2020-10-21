@@ -1,8 +1,6 @@
 import React from 'react';
 import Snackbar from '@material-ui/core/Snackbar';
-import Slide from '@material-ui/core/Slide';
 import MuiAlert from '@material-ui/lab/Alert';
-import { ThemeProvider } from '@material-ui/core';
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
