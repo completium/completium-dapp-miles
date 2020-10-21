@@ -1,7 +1,7 @@
 image:
   file: Dockerfile
 tasks:
-- init: cd miles && npm install
+- init: npm install
 ports:
 - port: 3000
   onOpen: open-browser
