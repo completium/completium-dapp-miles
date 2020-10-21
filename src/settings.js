@@ -1,24 +1,9 @@
 export const  contractAddress = "KT1Mu6RJzLpKroggUFSCsPPJuYQTHQESVeR1"
 
-export const  accountAddress  = "tz1 this is an address"
-
-export const  defaultNbActiveMiles = 5
-
 export const  milesColumns    = [
     { field: 'id', headerName: 'ID', width: 100 },
     { field: 'quantity', headerName: 'Quantity', width: 100 },
     { field: 'expiration', headerName: 'Expiration', width: 300 },
-  ]
-
-export const defaultMiles =  [
-    { id : "M0000001", expiration : "2020-06-01", quantity : 3 },
-    { id : "M0000002", expiration : "2020-10-21", quantity : 4 },
-    { id : "M0000003", expiration : "2020-12-02", quantity : 2 },
-    { id : "M0000003", expiration : "2020-12-03", quantity : 2 },
-    { id : "M0000003", expiration : "2020-12-04", quantity : 2 },
-    { id : "M0000003", expiration : "2020-12-05", quantity : 2 },
-    { id : "M0000003", expiration : "2020-12-06", quantity : 2 },
-    { id : "M0000003", expiration : "2020-12-07", quantity : 2 },
   ]
 
 export const products = [
