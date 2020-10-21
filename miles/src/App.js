@@ -12,6 +12,7 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Footer from './components/Footer';
 import ViewMiles from './components/ViewMiles';
+import SnackMsg from './components/SnackMsg';
 import { DAppProvider, useReady, useConnect } from './dapp';
 
 function getProductStates (connected, nbActiveMiles) {
@@ -73,6 +74,7 @@ function PageRouter() {
   const [contract, setContract]     = React.useState(null);
   const [miles, setMiles]           = React.useState(null);
   const [viewMiles, setViewMiles]   = React.useState(false);
+  const [viewSnack, setViewSnack]   = React.useState(false);
   const nbMiles = getNbActiveMiles(miles);
   const nextExpiration = getNextExpirationDate(miles);
   const productStates = getProductStates(ready,nbMiles);
@@ -102,7 +104,12 @@ function PageRouter() {
   }
 
   const handleReceipt = () => {
+    setViewSnack(false);
     setMiles(null);
+  }
+
+  const openSnack = () => {
+    setViewSnack(true);
   }
 
   return (
@@ -131,7 +138,8 @@ function PageRouter() {
                   state={productStates[product.pid]}
                   connected={ready}
                   contract={contract}
-                  handleReceipt={handleReceipt}>
+                  handleReceipt={handleReceipt}
+                  openSnack={openSnack}>
                 </Product>
               </Grid>
             )}
@@ -139,6 +147,7 @@ function PageRouter() {
       </Container>
       <Footer></Footer>
       <ViewMiles open={viewMiles} onclose={closeViewMiles} theme={theme} miles={miles}/>
+      <SnackMsg open={viewSnack} theme={theme}/>
     </ThemeProvider>
 
     </div>

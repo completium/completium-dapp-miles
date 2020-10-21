@@ -22,6 +22,7 @@ function ProductButton(props) {
   const handleClick = () => {
     props.contract.methods.consume(props.nbmiles).send().then( op => {
       console.log(`waiting for ${op.opHash} to be confirmed`);
+      props.openSnack();
       op.receipt().then(() => {
         props.handleReceipt();
       });
@@ -77,7 +78,8 @@ export default function Product(props) {
           connected={props.connected}
           contract={props.contract}
           nbmiles={props.nbmiles}
-          handleReceipt={props.handleReceipt}/>
+          handleReceipt={props.handleReceipt}
+          openSnack={props.openSnack}/>
       </CardActions>
     </Card>
   );
