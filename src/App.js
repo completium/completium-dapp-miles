@@ -78,7 +78,7 @@ function PageRouter() {
   const nbMiles = getNbActiveMiles(miles);
   const nextExpiration = getNextExpirationDate(miles);
   const productStates = getProductStates(ready,nbMiles);
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const prefersDarkMode = false; /*useMediaQuery('(prefers-color-scheme: dark)');*/
 
   const theme = React.useMemo(
     () =>
@@ -116,7 +116,7 @@ function PageRouter() {
     <div className="App">
     <ThemeProvider theme={theme}>
       <CssBaseline/>
-      <HeaderBar appTitle={appTitle}/>
+      <HeaderBar appTitle={appTitle} theme={theme}/>
       <Container maxWidth="md" style={{
           backgroundImage : "url(" + ticket + ")",
           backgroundRepeat  : 'no-repeat',
