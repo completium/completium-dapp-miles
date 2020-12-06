@@ -14,7 +14,7 @@ export const products = [
     { pid: "P005", image : "tezos-cap.png",  title : "Tezos Cap", nbmiles : 2, got : false },
   ]
 
-export const githubUrl = "https://github.com/edukera/completium-dapps"
+export const githubUrl = "https://github.com/edukera/completium-dapp-miles"
 
 export const appTitle = "Use Your Miles Before Expiration!"
 
