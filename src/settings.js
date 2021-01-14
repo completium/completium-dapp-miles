@@ -18,6 +18,6 @@ export const githubUrl = "https://github.com/edukera/completium-dapp-miles"
 
 export const appTitle = "Use Your Miles Before Expiration!"
 
-export const network = "carthagenet"
+export const network = "delphinet"
 
 export const appName = "MilesCorp."
