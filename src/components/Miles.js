@@ -23,13 +23,12 @@ const Miles = (props) => {
             var mile = storage.mile.get(mid);
             dappMiles.push({
               id         : mid,
-              quantity   : parseInt(mile.quantity,10),
+              amount     : mile.amount,
               expiration : mile.expiration
             });
           });
-          console.log(dappMiles);
         }
-        props.handleMiles(contract,dappMiles);
+        props.handleMiles(contract, dappMiles);
       })
     });
   }, [props.nbMiles]);

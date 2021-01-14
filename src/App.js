@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 import ViewMiles from './components/ViewMiles';
 import SnackMsg from './components/SnackMsg';
 import { DAppProvider, useReady, useConnect } from './dapp';
+import { BigNumber } from 'bignumber.js';
 
 function getProductStates (connected, nbActiveMiles) {
   console.log(connected);
@@ -28,11 +29,11 @@ function getNbActiveMiles(miles) {
   if (miles === null) {
     return null;
   };
-  var total = 0;
+  var total = new BigNumber('0');
   miles.forEach(mile => {
-    total += mile.quantity;
+    total = total.plus(mile.amount);
   });
-  return total;
+  return total.toNumber();
 }
 
 function getNextExpirationDate (miles) {

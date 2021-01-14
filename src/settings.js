@@ -2,7 +2,7 @@ export const  contractAddress = "KT1F5DqPwKJC9qeEjTgdEQKGGBZpcAv5DX86"
 
 export const  milesColumns    = [
     { field: 'id', headerName: 'ID', width: 100 },
-    { field: 'quantity', headerName: 'Quantity', width: 100 },
+    { field: 'amount', headerName: 'Amount', width: 100 },
     { field: 'expiration', headerName: 'Expiration', width: 300 },
   ]
 
