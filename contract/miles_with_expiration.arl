@@ -1,6 +1,6 @@
 archetype miles_with_expiration
 
-variable admin : role = @tz1Lc2qBKEWCBeDU8npG6zCeCqpmaegRi6Jg
+variable admin : role = @tz1MZrh8CvYkp7BfLQMcm6mg5FvL5HRZfACw
 
 (* id is a string because it is generated off-chain *)
 asset mile identified by id {
