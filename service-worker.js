@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/completium-dapp-miles/precache-manifest.b03b4e9bcd512e586363af67a163321a.js"
+  "/completium-dapp-miles/precache-manifest.aad79135d23d3632951828828271ccbb.js"
 );
 
 self.addEventListener('message', (event) => {
