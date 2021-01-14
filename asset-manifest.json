@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/completium-dapp-miles/static/css/main.4aae50fe.chunk.css",
-    "main.js": "/completium-dapp-miles/static/js/main.b9a47fbb.chunk.js",
-    "main.js.map": "/completium-dapp-miles/static/js/main.b9a47fbb.chunk.js.map",
+    "main.js": "/completium-dapp-miles/static/js/main.ad41f116.chunk.js",
+    "main.js.map": "/completium-dapp-miles/static/js/main.ad41f116.chunk.js.map",
     "runtime-main.js": "/completium-dapp-miles/static/js/runtime-main.dde7a563.js",
     "runtime-main.js.map": "/completium-dapp-miles/static/js/runtime-main.dde7a563.js.map",
     "static/js/2.d800cfcc.chunk.js": "/completium-dapp-miles/static/js/2.d800cfcc.chunk.js",
     "static/js/2.d800cfcc.chunk.js.map": "/completium-dapp-miles/static/js/2.d800cfcc.chunk.js.map",
     "index.html": "/completium-dapp-miles/index.html",
-    "precache-manifest.d46c15d23d995e30f90d13273f6b486a.js": "/completium-dapp-miles/precache-manifest.d46c15d23d995e30f90d13273f6b486a.js",
+    "precache-manifest.00da34509e9f806be3655c9e8da54937.js": "/completium-dapp-miles/precache-manifest.00da34509e9f806be3655c9e8da54937.js",
     "service-worker.js": "/completium-dapp-miles/service-worker.js",
     "static/css/main.4aae50fe.chunk.css.map": "/completium-dapp-miles/static/css/main.4aae50fe.chunk.css.map",
     "static/js/2.d800cfcc.chunk.js.LICENSE.txt": "/completium-dapp-miles/static/js/2.d800cfcc.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.dde7a563.js",
     "static/js/2.d800cfcc.chunk.js",
     "static/css/main.4aae50fe.chunk.css",
-    "static/js/main.b9a47fbb.chunk.js"
+    "static/js/main.ad41f116.chunk.js"
   ]
 }

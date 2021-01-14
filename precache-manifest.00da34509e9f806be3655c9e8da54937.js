@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ab02add77bc36907a116f357ebeba256",
+    "revision": "d1651e97dca6aa5674cbb2f1e1557a79",
     "url": "/completium-dapp-miles/index.html"
   },
   {
-    "revision": "acd997c41bc9ddab0eb4",
+    "revision": "c3f1079cb9cc398e74cb",
     "url": "/completium-dapp-miles/static/css/main.4aae50fe.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/completium-dapp-miles/static/js/2.d800cfcc.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "acd997c41bc9ddab0eb4",
-    "url": "/completium-dapp-miles/static/js/main.b9a47fbb.chunk.js"
+    "revision": "c3f1079cb9cc398e74cb",
+    "url": "/completium-dapp-miles/static/js/main.ad41f116.chunk.js"
   },
   {
     "revision": "48283ae1b6f690c45209",
