@@ -11,26 +11,26 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 
 const Miles = (props) => {
 
+  /////////////////////////////////////////////////////////////////////////////
+  // The 'account' variable retrieved from 'dapp.js' is the connected account
+  // address
+  /////////////////////////////////////////////////////////////////////////////
   const account = useAccountPkh();
+  /////////////////////////////////////////////////////////////////////////////
+  // The 'tezos' variable retrieved from 'dapp.js' is used to interact with the
+  // blockchain
+  /////////////////////////////////////////////////////////////////////////////
   const tezos = useTezos();
 
   useEffect(() => {
-    tezos.wallet.at(contractAddress).then(contract => {
-      contract.storage().then(storage => {
-        var dappMiles = [];
-        if (storage.owner.has(account)) {
-          storage.owner.get(account).forEach(mid => {
-            var mile = storage.mile.get(mid);
-            dappMiles.push({
-              id         : mid,
-              amount     : mile.amount,
-              expiration : mile.expiration
-            });
-          });
-        }
-        props.handleMiles(contract, dappMiles);
-      })
-    });
+    ///////////////////////////////////////////////////////////////////////////
+    // FIX ME:
+    // the goal here is to read the contract storage to extract miles' info
+    // for the connected 'account' and invoke the 'props.handleMiles' function
+    // defined in App.js; it takes 2 arguments:
+    // * contract object itself
+    // * list of miles data { id; amount; expration } for the account 'address'
+    ///////////////////////////////////////////////////////////////////////////
   }, [props.nbMiles]);
 
   return (

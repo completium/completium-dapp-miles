@@ -20,13 +20,16 @@ const useStyles = makeStyles({
 function ProductButton(props) {
 
   const handleClick = () => {
-    props.contract.methods.consume(props.nbmiles).send().then( op => {
-      console.log(`waiting for ${op.opHash} to be confirmed`);
-      props.openSnack();
-      op.receipt().then(() => {
-        props.handleReceipt();
-      });
-    })
+    ///////////////////////////////////////////////////////////////////////////
+    // FIX ME
+    // The goal is to call the 'consume' contract's entry point. The number of
+    // miles to consume is 'props.nbmiles'.
+    // On the UI front, the snack bar should be opened whith 'props.openSnack()'
+    // while the transaction is confirmed, and closed when confirmed with
+    // 'props.closeSnack()'.
+    // The 'receipt()' method of the operation is used to know when the
+    // transaction is confirmed.
+    ///////////////////////////////////////////////////////////////////////////
   }
 
   if (props.connected) {
