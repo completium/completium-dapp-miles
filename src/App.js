@@ -52,11 +52,14 @@ function getNextExpirationDate (miles) {
 
 function App() {
   return (
-    <DAppProvider appName={appName}>
-      <React.Suspense fallback={null}>
-        <PageRouter />
-      </React.Suspense>
-    </DAppProvider>
+    ///////////////////////////////////////////////////////////////////////////
+    // FIX ME
+    // Wrap the App's body with <DAppProvider> tag/function in order to benefit
+    // from wallet's service as defined in dapp.js
+    ///////////////////////////////////////////////////////////////////////////
+    <React.Suspense fallback={null}>
+      <PageRouter />
+    </React.Suspense>
   );
 }
 
