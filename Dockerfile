@@ -6,4 +6,3 @@ RUN sudo wget -q https://github.com/edukera/archetype-lang/releases/download/1.2
 RUN sudo ln -s /usr/local/bin/archetype-x64-linux /usr/local/bin/archetype
 RUN sudo chmod +x /usr/local/bin/archetype-x64-linux /usr/local/bin/tezos-client
 RUN npm i @completium/completium-cli -g
-RUN completium-cli init
