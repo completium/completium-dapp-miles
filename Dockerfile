@@ -5,3 +5,5 @@ RUN sudo wget -q https://github.com/serokell/tezos-packaging/releases/latest/dow
 RUN sudo wget -q https://github.com/edukera/archetype-lang/releases/download/1.2.1/archetype-x64-linux -P /usr/local/bin
 RUN sudo ln -s /usr/local/bin/archetype-x64-linux /usr/local/bin/archetype
 RUN sudo chmod +x /usr/local/bin/archetype-x64-linux /usr/local/bin/tezos-client
+RUN npm i @completium/completium-cli
+RUN completium-cli init
