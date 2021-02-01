@@ -4,6 +4,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import '../index.css';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import Button from '@material-ui/core/Button';
+import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 
 const HeaderBar = (props) => {
   const minWidth = useMediaQuery('(min-width:600px)');
@@ -18,6 +20,11 @@ const HeaderBar = (props) => {
         <Typography variant="h6" style={{ flexGrow : 1, visibility: visible }}>
           {props.appTitle}
         </Typography>
+        <a href="https://edukera.github.io/completium-landing/docs/dapp-miles/miles-use-case1" target="_blank">
+          <Button style={{ color: 'white' }} component="span">
+            <HelpOutlineIcon/>
+          </Button>
+        </a>
       </Toolbar>
     </AppBar>
   )
