@@ -14,9 +14,11 @@ const HeaderBar = (props) => {
   return (
     <AppBar position="static" color={dark?'inherit':'secondary'} style={{ boxShadow: "none", opacity: 1, /* backgroundColor: '#303030' */ }}>
       <Toolbar>
-        <Typography variant="h6" style={{ position : 'absolute', fontFamily : 'Alegreya Sans SC, sans-serif' }}>
-          Completium
-        </Typography>
+        <a href="https://edukera.github.io/completium-landing/index.html" target="_blank" style={{ color: 'white', height: '32px' }}>
+          <Typography variant="h6" style={{ position : 'absolute', fontFamily : 'Alegreya Sans SC, sans-serif' }}>
+            Completium
+          </Typography>
+        </a>
         <Typography variant="h6" style={{ flexGrow : 1, visibility: visible }}>
           {props.appTitle}
         </Typography>
