@@ -22,7 +22,7 @@ const HeaderBar = (props) => {
         <Typography variant="h6" style={{ flexGrow : 1, visibility: visible }}>
           {props.appTitle}
         </Typography>
-        <a href="https://edukera.github.io/completium-landing/docs/dapp-miles/miles-use-case1" target="_blank">
+        <a href="https://edukera.github.io/completium-landing/docs/dapp-miles/usecase-presentation" target="_blank">
           <Button style={{ color: 'white' }} component="span">
             <HelpOutlineIcon/>
           </Button>
