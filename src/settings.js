@@ -1,8 +1,4 @@
-/////////////////////////////////////////////////////////////////////////////
-// FIX ME
-// set new contract address
-/////////////////////////////////////////////////////////////////////////////
-export const  contractAddress = "KT1F5DqPwKJC9qeEjTgdEQKGGBZpcAv5DX86"
+export const  contractAddress = "KT1M3WqApg77zxkdmzbNmib7kCXGupVbNBLM"
 
 export const  milesColumns    = [
     { field: 'id', headerName: 'ID', width: 100 },
@@ -22,6 +18,7 @@ export const githubUrl = "https://github.com/edukera/completium-dapp-miles"
 
 export const appTitle = "Use Your Miles Before Expiration!"
 
-export const network = "delphinet"
+export const network  = "edo2net"
+export const endpoint = 'https://edonet-tezos.giganode.io/'
 
 export const appName = "MilesCorp."

@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import ticket from './img/takeoff-ticket.svg';
-import { products, appTitle, appName, network } from './settings.js';
+import { products, appTitle, appName, network, endpoint } from './settings.js';
 import HeaderBar from './components/HeaderBar';
 import ConnectWallet from './components/ConnectWallet';
 import Product from './components/Product';
