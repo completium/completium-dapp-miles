@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/completium-dapp-miles/static/css/main.4aae50fe.chunk.css",
-    "main.js": "/completium-dapp-miles/static/js/main.2ed9b59a.chunk.js",
-    "main.js.map": "/completium-dapp-miles/static/js/main.2ed9b59a.chunk.js.map",
+    "main.js": "/completium-dapp-miles/static/js/main.10ad929f.chunk.js",
+    "main.js.map": "/completium-dapp-miles/static/js/main.10ad929f.chunk.js.map",
     "runtime-main.js": "/completium-dapp-miles/static/js/runtime-main.dde7a563.js",
     "runtime-main.js.map": "/completium-dapp-miles/static/js/runtime-main.dde7a563.js.map",
-    "static/js/2.87347fe4.chunk.js": "/completium-dapp-miles/static/js/2.87347fe4.chunk.js",
-    "static/js/2.87347fe4.chunk.js.map": "/completium-dapp-miles/static/js/2.87347fe4.chunk.js.map",
+    "static/js/2.cd5673db.chunk.js": "/completium-dapp-miles/static/js/2.cd5673db.chunk.js",
+    "static/js/2.cd5673db.chunk.js.map": "/completium-dapp-miles/static/js/2.cd5673db.chunk.js.map",
     "index.html": "/completium-dapp-miles/index.html",
-    "precache-manifest.9b77df0661383645a12aa8a684dfb909.js": "/completium-dapp-miles/precache-manifest.9b77df0661383645a12aa8a684dfb909.js",
+    "precache-manifest.62fe3e8bfad72559b4a9ee8557f65cea.js": "/completium-dapp-miles/precache-manifest.62fe3e8bfad72559b4a9ee8557f65cea.js",
     "service-worker.js": "/completium-dapp-miles/service-worker.js",
     "static/css/main.4aae50fe.chunk.css.map": "/completium-dapp-miles/static/css/main.4aae50fe.chunk.css.map",
-    "static/js/2.87347fe4.chunk.js.LICENSE.txt": "/completium-dapp-miles/static/js/2.87347fe4.chunk.js.LICENSE.txt",
+    "static/js/2.cd5673db.chunk.js.LICENSE.txt": "/completium-dapp-miles/static/js/2.cd5673db.chunk.js.LICENSE.txt",
     "static/media/takeoff-ticket.svg": "/completium-dapp-miles/static/media/takeoff-ticket.0418c8df.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.dde7a563.js",
-    "static/js/2.87347fe4.chunk.js",
+    "static/js/2.cd5673db.chunk.js",
     "static/css/main.4aae50fe.chunk.css",
-    "static/js/main.2ed9b59a.chunk.js"
+    "static/js/main.10ad929f.chunk.js"
   ]
 }
