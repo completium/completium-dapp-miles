@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "191eb8d2778ec2caefd00e15628c527b",
+    "revision": "57e5d8183ad2c74080dd6ac099c242bb",
     "url": "/completium-dapp-miles/index.html"
   },
   {
-    "revision": "07840037367b63015e6e",
+    "revision": "b4b7b037141aaac73342",
     "url": "/completium-dapp-miles/static/css/main.4aae50fe.chunk.css"
   },
   {
-    "revision": "9e9294f35f992a6a51fc",
-    "url": "/completium-dapp-miles/static/js/2.cd5673db.chunk.js"
+    "revision": "86dcf6f5680f89a8c193",
+    "url": "/completium-dapp-miles/static/js/2.40444221.chunk.js"
   },
   {
     "revision": "d2f33e8ea5941308c4b60803f5cfed3b",
-    "url": "/completium-dapp-miles/static/js/2.cd5673db.chunk.js.LICENSE.txt"
+    "url": "/completium-dapp-miles/static/js/2.40444221.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "07840037367b63015e6e",
-    "url": "/completium-dapp-miles/static/js/main.10ad929f.chunk.js"
+    "revision": "b4b7b037141aaac73342",
+    "url": "/completium-dapp-miles/static/js/main.5efab7ce.chunk.js"
   },
   {
     "revision": "48283ae1b6f690c45209",
