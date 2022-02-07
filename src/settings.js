@@ -1,4 +1,4 @@
-export const  contractAddress = "KT1PxoVTSDinP7QaX8QCfUYEea4ejo7ty65M"
+export const  contractAddress = "KT1XpM1f6cq8cy8m8WV9xSsE5nBix2DzTYmx"
 
 export const  milesColumns    = [
     { field: 'id', headerName: 'ID', width: 100 },
@@ -18,7 +18,7 @@ export const githubUrl = "https://github.com/edukera/completium-dapp-miles"
 
 export const appTitle = "Use Your Miles Before Expiration!"
 
-export const network  = "florencenet"
-export const endpoint = 'https://florencenet.smartpy.io/'
+export const network  = "hangzhounet"
+export const endpoint = 'https://hangzhounet.smartpy.io/'
 
 export const appName = "MilesCorp."

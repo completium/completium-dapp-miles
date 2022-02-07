@@ -1,11 +1,9 @@
-archetype miles_with_expiration
-
-variable admin : address = @tz1MZrh8CvYkp7BfLQMcm6mg5FvL5HRZfACw
+archetype miles_with_expiration(admin : address)
 
 (* id is a string because it is generated off-chain *)
 asset mile identified by id {
    id         : string;
-   amount     : int;
+   amount     : nat;
    expiration : date
 }
 
@@ -15,11 +13,8 @@ asset owner identified by addr {
   miles : partition<mile> = []
 }
 
-entry add (ow : address, newmile_id : string, newmile_amount : int, newmile_expiration : date) {
+entry add (ow : address, newmile_id : string, newmile_amount : nat, newmile_expiration : date) {
    called by admin
-   require {
-     c1 : newmile_amount > 0;
-   }
    failif {
      c2 : mile.contains(newmile_id);
    }
@@ -28,10 +23,7 @@ entry add (ow : address, newmile_id : string, newmile_amount : int, newmile_expi
    }
 }
 
-entry consume (quantity : int) {
-  require {
-    r2 : quantity >= 0;
-  }
+entry consume (quantity : nat) {
   effect {
     var by_expiration = owner[caller].miles.sort(expiration).select(the.expiration >= now);
     dorequire (by_expiration.sum(the.amount) >= quantity, "NotEnoughMiles");
@@ -73,7 +65,7 @@ specification asset mile {
   m1: amount > 0;
 }
 
-specification entry consume (quantity : int) {
+specification entry consume (quantity : nat) {
   assert p1 {
       remainder = 0
   }
